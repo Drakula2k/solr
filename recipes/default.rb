@@ -129,15 +129,6 @@ ruby_block 'Copy ext libs into Jetty' do
   end
 end
 
-template "#{node['jetty']['contexts']}/solr.xml" do
-  owner node['jetty']['user']
-  group node['jetty']['group']
-  mode "644"
-  source "solr.context.erb"
-  notifies :restart, "service[jetty]"
-  not_if { jetty_major_version > 8 }
-end
-
 directory node['solr']['data'] do
   owner node['jetty']['user']
   group node['jetty']['group']
