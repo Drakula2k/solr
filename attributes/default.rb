@@ -30,10 +30,6 @@ default['solr']['home'] = "/usr/share/solr"
 default['solr']['data'] = "/usr/local/solr/data"
 
 default['solr']['context_path'] = '/solr'
-default['solr']['env_vars'] = {
-	'solr.solr.home' => node['solr']['home'],
-	'solr.data.dir' => node['solr']['data']
-}
 
 # SEVERE (highest value) WARNING INFO CONFIG FINE FINER FINEST (lowest value)
 default['solr']['log']['level'] = 'INFO'
